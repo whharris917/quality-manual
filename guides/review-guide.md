@@ -66,6 +66,8 @@ Use `qms withdraw {DOC_ID}` (or simply `qms checkout {DOC_ID}` which auto-withdr
 | POST_REVIEW | IN_EXECUTION |
 | POST_APPROVAL | POST_REVIEWED |
 
+**To re-open from REVIEWED or POST_REVIEWED:** `qms withdraw` is not valid from these states. Use `qms checkout {DOC_ID}` instead — this auto-creates a new draft revision. The document returns to DRAFT (or IN_EXECUTION) and is ready for further edits before routing again.
+
 ---
 
 ## For Reviewers (qa, tu_*, bu)

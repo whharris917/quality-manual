@@ -19,9 +19,11 @@ When a document lands in your inbox:
 1. **Read the document.** All of it. Not just the sections you think matter.
 2. **Identify the document type** (CR, INV, VAR, ADD, VR, etc.) and whether this is pre-review, post-review, or approval.
 3. **Determine which domains are affected** — this tells you who else needs to review.
-4. **Assign reviewers** before starting your own review.
+4. **Assign reviewers BEFORE submitting your own review.**
 
-Assigning reviewers first is important because it lets them work in parallel with you.
+Assigning first is required, not just preferred. The CLI's automatic transition from IN_REVIEW (or IN_PRE_REVIEW / IN_POST_REVIEW) to REVIEWED triggers as soon as all assigned reviewers have responded. If you are the sole assigned reviewer at the moment you submit your outcome, the cycle closes immediately, and the `assign` command becomes invalid (it requires IN_REVIEW or IN_APPROVAL). Adding reviewers after this point requires the document owner to withdraw and re-route, which restarts the review cycle.
+
+Assigning first also lets reviewers work in parallel with you, which is the secondary benefit.
 
 ---
 
@@ -176,6 +178,14 @@ Don't reject for:
 If a VAR is classified as Type 2 but you believe it should be Type 1, say so in your review. The question to ask: "If the parent closes while this VAR is still in execution, is the parent's closure meaningful?" If the answer is no, request updates and explain why you believe Type 1 is appropriate.
 
 Conversely, if a Type 1 VAR is clearly contained and won't affect the parent's objectives, you can note that Type 2 might be more appropriate — but this is less critical, since Type 1 is the conservative default.
+
+### Re-Review Baseline After Withdrawal
+
+When a draft has been withdrawn from review and re-routed for another cycle (whether due to your own request-updates, an orchestrator-initiated revision, or a procedural reset), the relevant comparison baseline for "did the substantive content change?" is **the last EFFECTIVE version of the document, not the prior review cycle's content**.
+
+This matters most when you are deciding whether previously-assigned reviewers need to re-review the new draft. If the prior cycle's reviewers had not yet submitted their reviews when the document was withdrawn, they have not actually reviewed any content — recent or otherwise. The "previous recommendation" you might be tempted to lean on belongs to an earlier *effective* version, not to the current draft cycle.
+
+**Rule:** When deciding whether re-review by domain reviewers is required, compare the current draft's substantive content (evidence text, technical claims, requirement statements) to the last EFFECTIVE version. If those differ in substance — not merely in line citations or formatting — domain reviewers must review. The fact that QA's own concerns from a prior cycle have been addressed is necessary but not sufficient.
 
 ### When a CR Should Be an INV
 
