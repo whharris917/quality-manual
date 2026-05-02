@@ -43,7 +43,7 @@ Non-executable documents ([SOP](types/SOP.md), [RS](types/RS.md), [RTM](types/RT
 | IN_REVIEW | IN_REVIEW | `review --recommend` | Reviewer | Records positive review |
 | IN_REVIEW | IN_REVIEW | `review --request-updates` | Reviewer | Records review requesting changes |
 | IN_REVIEW | REVIEWED | (automatic) | System | Triggers when all assigned reviewers have responded |
-| REVIEWED | DRAFT | (implied by rejection logic) | Owner | If any reviewer requested updates, owner must revise and re-route |
+| REVIEWED | DRAFT | `checkout` | Owner | Re-opens for revision before approval routing. Auto-creates new draft (vN.X+1). Use this when reviewers requested updates that need addressing. |
 | REVIEWED | IN_APPROVAL | `route --approval` | Owner | Only if no outstanding request-updates |
 | IN_APPROVAL | EFFECTIVE | `approve` | Approver | Version increments to N.0 |
 | IN_APPROVAL | REVIEWED | `reject` | Approver | Returns with rejection comment; owner must revise |

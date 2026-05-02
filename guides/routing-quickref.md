@@ -15,6 +15,7 @@ One-page cheat sheet for document routing. Shows what you can do from each statu
 | **IN_REVIEW** | `withdraw` | DRAFT |
 | **IN_REVIEW** | *(reviewers)* `review` | IN_REVIEW (until all complete, then REVIEWED) |
 | **REVIEWED** | `route --approval` | IN_APPROVAL |
+| **REVIEWED** | `checkout` | DRAFT (re-opens for revision before approval) |
 | **IN_APPROVAL** | *(approver)* `approve` | EFFECTIVE (v N.0) |
 | **IN_APPROVAL** | *(approver)* `reject` | REVIEWED |
 | **EFFECTIVE** | `checkout` | DRAFT (starts revision) |
@@ -39,7 +40,7 @@ One-page cheat sheet for document routing. Shows what you can do from each statu
 | **POST_REVIEW** | *(reviewers)* `review` | POST_REVIEW until all complete, then POST_REVIEWED |
 | **POST_REVIEWED** | `route --approval` | POST_APPROVAL |
 | **POST_REVIEWED** | `revert --reason "..."` | IN_EXECUTION |
-| **POST_REVIEWED** | `checkout` | IN_EXECUTION |
+| **POST_REVIEWED** | `checkout` | IN_EXECUTION (re-opens for revision before approval) |
 | **POST_APPROVAL** | *(approver)* `approve` | POST_APPROVED (v N.0) |
 | **POST_APPROVAL** | *(approver)* `reject` | POST_REVIEWED |
 | **POST_APPROVED** | `close` | CLOSED |
