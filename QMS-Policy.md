@@ -120,6 +120,8 @@ If execution reveals that additional work is needed:
 
 The pre/post split exists so that reviewers can verify the plan (pre) and then verify the execution matched the plan (post). If execution routinely diverges from the plan without formal scope changes, the review process provides no assurance.
 
+Scope specificity is the author's judgment call. A CR may be authored at low specificity ("Exploration CR") when the Purpose explicitly identifies it as exploratory and the Scope section includes structural bounds (per SOP-002 §6.2). The adherence-to-plan rule applies to whatever specificity was committed to: a loose plan is a license to do anything *within the stated bounds*, not a license to do anything. Work that would exit the bounds is handled via the standard VAR mechanism (per scope-change-guide); the VAR documents the deviation and may authorize a new CR if legitimate scope expansion is warranted.
+
 ---
 
 ## 7. Code Governance
