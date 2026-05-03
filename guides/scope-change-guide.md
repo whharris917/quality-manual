@@ -186,6 +186,15 @@ This is the "Additional Work Discovered" scenario. The mechanism depends on the 
 
 **The parent's objectives cannot expand.** If the additional work changes the Purpose or Scope sections of the CR, that is not a VAR -- that is a fundamental scope change that may require withdrawing and revising the CR, or creating a new CR.
 
+### Out-of-bound work in an Exploration CR
+
+When execution in an Exploration CR (per QMS-Policy §6 + SOP-002 §6.2) encounters work that would exit the bounds declared in §2 Scope, the standard VAR mechanism applies (per SOP-004 §9A): the VAR documents the deviation and its resolution. Two resolution paths:
+
+1. **Revert / stop in-bound.** The VAR resolves by recording that the executor chose not to do the out-of-bound work; bound is honored; Exploration CR proceeds within its original scope.
+2. **New CR for legitimate scope expansion.** The VAR identifies that the out-of-bound work is genuinely needed; the VAR's resolution authorizes (and references) a new CR that takes the expanded work through standard pre-approval.
+
+The VAR itself does NOT expand the Exploration CR's bounds — it documents the deviation and surfaces the question. The bound expansion (if warranted) happens via the new CR's pre-approval, preserving the scope-integrity principle that pre-approved scope is a contract.
+
 ---
 
 ## The "Different Execution Mechanism" Rule
